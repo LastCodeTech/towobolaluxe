@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth;
 use App\Http\Controllers\TowobolaluxeController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,5 +12,8 @@ Route::get('/look Book',[TowobolaluxeController::class,'lookBookFav'])->name('lo
 Route::get('/look book fav',[TowobolaluxeController::class,'lookBook'])->name('lookBook');
 Route::get('/about us',[TowobolaluxeController::class,'about'])->name('about');
 Route::get('/contact us',[TowobolaluxeController::class,'contact'])->name('contact');
+Route::get('/login',[Auth::class,'login'])->name('login');
+Route::get('/dashboard',[TowobolaluxeController::class,'dashboard'])->name('dashboard');
+Route::post('/login',[TowobolaluxeController::class,'loginProcess'])->name('loginProcess');
 
 

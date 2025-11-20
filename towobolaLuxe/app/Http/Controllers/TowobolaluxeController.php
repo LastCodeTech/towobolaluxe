@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TowobolaluxeController extends Controller
 {
@@ -26,5 +27,26 @@ class TowobolaluxeController extends Controller
     }
     public function contact(){
         return view('contact');
+    }
+
+    Public function login(){
+        return view('login');
+    }
+
+    public function loginProcess(Request $request){
+        $validate=$request->validate([
+            'email'=>'required|email',
+            'password'=>'string|min:5|required'
+        ]);
+        if(Auth::attempt($validate)){
+            return redirect()->route('dashboard');
+        }
+        else{
+             return redirect()->route('login')->with('message','email or password is incorrect');
+        }
+    }
+
+    public function dashboard(){
+        return view('dashboard');
     }
 }
