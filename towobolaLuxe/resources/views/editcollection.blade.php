@@ -64,9 +64,11 @@
 </header>
 <main class="p-4 md:p-6 space-y-8">
 <div class="max-w-4xl mx-auto">
-<h2 class="text-3xl font-display font-bold mb-6">Manage Collections</h2>
+<div class='flex justify-between items-center mb-3'>
+<h2 class="text-2xl md:3xl font-display font-bold ">Manage Collections</h2>
+<button class='bg-red-400 rounded-md text-sm shadow-sm py-2 px-3'><a href="{{route('dashboard')}}" class='text-white capitalize'>back</a></button></div>
 <div class="bg-white dark:bg-neutral-dark p-6 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
-<h3 class="text-xl font-semibold mb-4 font-display">Add New Collection</h3>
+<h3 class="text-xl font-semibold mb-4 font-display">update Collection</h3>
 <form class="space-y-4">
 <div>
 <label class="block text-sm font-medium text-text-light/80 dark:text-text-dark/80" for="collection-name">Collection Name</label>
@@ -100,62 +102,15 @@
     <option value="gown">gown</option>
 </select>
 </div>
-<div class="flex justify-between gap-3 pt-2">
+<div class="flex justify-center pt-2">
 <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
-                                Add Collection
+                                update Collection
                             </button>
-<button class='bg-red-400 rounded-md text-sm shadow-sm py-2 px-3'><a href="{{route('testimonialsmng')}}" class='text-white capitalize'>manage testimonials</a></button>
 </div>
-
 </form>
 </div>
-<div class="mt-12">
-<h3 class="text-xl font-semibold mb-4 font-display">Existing Collections</h3>
-<div class="space-y-4">
-<div class="flex items-center justify-between bg-white dark:bg-neutral-dark p-4 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
-<div>
-<p class="font-semibold">Autumn/Winter 2023</p>
-<p class="text-sm text-text-light/70 dark:text-text-dark/70">A collection inspired by earthy tones.</p>
-</div>
-<div class="flex items-center space-x-2">
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-neutral-light dark:hover:bg-gray-700">
-<span class="material-symbols-outlined text-lg"><a href='{{route('editcollection')}}'>edit</a></span>
-</button>
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-red-50 dark:hover:bg-red-900/30">
-<span class="material-symbols-outlined text-lg text-red-600 dark:text-red-500">delete</span>
-</button>
-</div>
-</div>
-<div class="flex items-center justify-between bg-white dark:bg-neutral-dark p-4 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
-<div>
-<p class="font-semibold">Bridal Couture '23</p>
-<p class="text-sm text-text-light/70 dark:text-text-dark/70">Exquisite gowns for the modern bride.</p>
-</div>
-<div class="flex items-center space-x-2">
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-neutral-light dark:hover:bg-gray-700">
-<span class="material-symbols-outlined text-lg">edit</span>
-</button>
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-red-50 dark:hover:bg-red-900/30">
-<span class="material-symbols-outlined text-lg text-red-600 dark:text-red-500">delete</span>
-</button>
-</div>
-</div>
-<div class="flex items-center justify-between bg-white dark:bg-neutral-dark p-4 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
-<div>
-<p class="font-semibold">Resort Wear</p>
-<p class="text-sm text-text-light/70 dark:text-text-dark/70">Light and airy pieces for your next getaway.</p>
-</div>
-<div class="flex items-center space-x-2">
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-neutral-light dark:hover:bg-gray-700">
-<span class="material-symbols-outlined text-lg">edit</span>
-</button>
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-red-50 dark:hover:bg-red-900/30">
-<span class="material-symbols-outlined text-lg text-red-600 dark:text-red-500">delete</span>
-</button>
-</div>
-</div>
-</div>
-</div>
+
+
 </div>
 </main>
 </div>
