@@ -111,7 +111,7 @@
 </div>
 <div class="flex items-center gap-1 self-start md:self-center shrink-0 ml-auto md:ml-0">
 <button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
-<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+<span class="material-symbols-outlined" style="font-size: 20px;"><a href="{{route('edittestimonials')}}">edit</a></span>
 </button>
 <button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-red-500 dark:text-red-500">
 <span class="material-symbols-outlined" style="font-size: 20px;">delete</span>

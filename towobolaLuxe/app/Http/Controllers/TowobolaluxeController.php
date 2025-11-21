@@ -48,11 +48,22 @@ class TowobolaluxeController extends Controller
     public function dashboard(){
         return view('dashboard');
     }
+
     public function testimonialsmng(){
         return view('testimonialsmng');
     }
+
     public function editcollection(){
         return view('editcollection');
     }
+
+    public function edittestimonials(){
+        return view('edittestimonials');
+    }
+     public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        return redirect()->route('home');
+     }
    
 }

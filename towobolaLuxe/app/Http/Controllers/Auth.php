@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\Auth as SupportFacadesAuth;
 
 class Auth extends Controller
 {
@@ -12,16 +14,4 @@ class Auth extends Controller
         return view('login');
     }
 
-//   public function loginProcess(Request $request){
-//         $validate=$request->validate([
-//             'email'=>'required|email',
-//             'password'=>'string|min:5|required'
-//         ]);
-//         if(A::attempt($validate)){
-//             return redirect()->route('home');
-//         }
-//         else{
-//              return redirect()->route('login');
-//         }
-//     }
 }

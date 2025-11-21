@@ -66,7 +66,13 @@
 <div class="max-w-4xl mx-auto">
 <h2 class="text-3xl font-display font-bold mb-6">Manage Collections</h2>
 <div class="bg-white dark:bg-neutral-dark p-6 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
-<h3 class="text-xl font-semibold mb-4 font-display">Add New Collection</h3>
+<div class='flex justify-between mb-3 items-center'>
+    <h3 class="text-xl font-semibold mb-4 font-display">Add New Collection</h3>
+    <form method='POST' action="{{route('logout')}}">
+        @csrf
+        <button class='text-white capitalize bg-red-400 rounded-md text-sm shadow-sm py-2 px-3'>logout</button>
+    </form>
+</div>
 <form class="space-y-4">
 <div>
 <label class="block text-sm font-medium text-text-light/80 dark:text-text-dark/80" for="collection-name">Collection Name</label>
