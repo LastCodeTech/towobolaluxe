@@ -18,6 +18,7 @@ Route::get('/edit collection',[TowobolaluxeController::class,'editcollection'])-
 Route::get('/edit testimonials',[TowobolaluxeController::class,'edittestimonials'])->name('edittestimonials');
 Route::post('/logout',[TowobolaluxeController::class,'logout'])->name('logout');
 Route::get('/testimonials management',[TowobolaluxeController::class,'testimonialsmng'])->name('testimonialsmng');
+Route::get('/addcategory',[TowobolaluxeController::class,'addcategory'])->name('addcategory');
 Route::post('/login',[TowobolaluxeController::class,'loginProcess'])->name('loginProcess');
 
 

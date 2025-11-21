@@ -98,13 +98,15 @@
 </div>
 </div>
 </div>
+<div class="flex justify-between items-center">
 <div>
 <label class="block text-sm font-medium text-text-light/80 dark:text-text-dark/80" for="collection-categories">Categories</label>
 <select class='text-white bg-slate-700 text-sm capitalize font-bold border-1 rounded-md'>
     <option value="">choose Category</option>
     <option value="abaya">abaya</option>
     <option value="gown">gown</option>
-</select>
+</select></div>
+<button class='text-2xl font-bold text-white bg-red-400 py-2 px-3 rounded-md'><a href='{{route('addcategory')}}'>+</a></button>
 </div>
 <div class="flex justify-between gap-3 pt-2">
 <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">

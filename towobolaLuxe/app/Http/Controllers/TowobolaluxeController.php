@@ -65,5 +65,9 @@ class TowobolaluxeController extends Controller
         $request->session()->invalidate();
         return redirect()->route('home');
      }
+
+     public function addcategory(){
+        return view('addcategory');
+     }
    
 }
