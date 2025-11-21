@@ -14,6 +14,7 @@ Route::get('/about us',[TowobolaluxeController::class,'about'])->name('about');
 Route::get('/contact us',[TowobolaluxeController::class,'contact'])->name('contact');
 Route::get('/login',[Auth::class,'login'])->name('login');
 Route::get('/dashboard',[TowobolaluxeController::class,'dashboard'])->name('dashboard');
+Route::get('/testimonials management',[TowobolaluxeController::class,'testimonialsmng'])->name('testimonialsmng');
 Route::post('/login',[TowobolaluxeController::class,'loginProcess'])->name('loginProcess');
 
 

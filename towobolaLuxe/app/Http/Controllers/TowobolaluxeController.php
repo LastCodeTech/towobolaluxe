@@ -45,8 +45,11 @@ class TowobolaluxeController extends Controller
              return redirect()->route('login')->with('message','email or password is incorrect');
         }
     }
-
     public function dashboard(){
         return view('dashboard');
     }
+    public function testimonialsmng(){
+        return view('testimonialsmng');
+    }
+   
 }

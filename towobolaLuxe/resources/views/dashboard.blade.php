@@ -96,11 +96,13 @@
 <label class="block text-sm font-medium text-text-light/80 dark:text-text-dark/80" for="collection-categories">Categories</label>
 <input class="mt-1 block w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary" id="collection-categories" name="collection-categories" placeholder="e.g., Gowns, Kaftans, Abayas (comma-separated)" type="text"/>
 </div>
-<div class="flex justify-end pt-2">
+<div class="flex justify-between gap-3 pt-2">
 <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
                                 Add Collection
                             </button>
+<button class='bg-red-400 rounded-md text-sm shadow-sm py-2 px-3'><a href="{{route('testimonialsmng')}}" class='text-white capitalize'>manage testimonials</a></button>
 </div>
+
 </form>
 </div>
 <div class="mt-12">
