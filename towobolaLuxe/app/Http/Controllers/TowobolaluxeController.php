@@ -57,6 +57,9 @@ class TowobolaluxeController extends Controller
     public function testimonialsmng(){
         return view('testimonialsmng');
     }
+    public function practice(){
+        return view('practice');
+    }
 
     public function editcollection(){
         return view('editcollection');

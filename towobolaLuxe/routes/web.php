@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[TowobolaluxeController::class,'home'])->name('home');
 Route::get('/testimonials',[TowobolaluxeController::class,'testimonials'])->name('testimonials');
+Route::get('/practice',[TowobolaluxeController::class,'practice'])->name('practice');
 Route::get('/book fittings',[TowobolaluxeController::class,'bookfittings'])->name('bookfittings');
 // Route::get('/book fittings',[TowobolaluxeController::class,'bookfittings'])->name('bookfittings');
 Route::get('/look Book',[TowobolaluxeController::class,'lookBookFav'])->name('lookBookFav');
