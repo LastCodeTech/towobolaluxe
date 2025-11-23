@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[TowobolaluxeController::class,'home'])->name('home');
 Route::get('/testimonials',[TowobolaluxeController::class,'testimonials'])->name('testimonials');
 Route::get('/book fittings',[TowobolaluxeController::class,'bookfittings'])->name('bookfittings');
-Route::get('/book fittings',[TowobolaluxeController::class,'bookfittings'])->name('bookfittings');
+// Route::get('/book fittings',[TowobolaluxeController::class,'bookfittings'])->name('bookfittings');
 Route::get('/look Book',[TowobolaluxeController::class,'lookBookFav'])->name('lookBookFav');
 Route::get('/look book fav',[TowobolaluxeController::class,'lookBook'])->name('lookBook');
 Route::get('/about us',[TowobolaluxeController::class,'about'])->name('about');
@@ -19,6 +19,9 @@ Route::get('/edit testimonials',[TowobolaluxeController::class,'edittestimonials
 Route::post('/logout',[TowobolaluxeController::class,'logout'])->name('logout');
 Route::get('/testimonials management',[TowobolaluxeController::class,'testimonialsmng'])->name('testimonialsmng');
 Route::get('/addcategory',[TowobolaluxeController::class,'addcategory'])->name('addcategory');
+Route::get('/editcategory/{id}',[TowobolaluxeController::class,'editcategory'])->name('editcategory');
 Route::post('/login',[TowobolaluxeController::class,'loginProcess'])->name('loginProcess');
+Route::post('/createCategory',[TowobolaluxeController::class,'createCategory'])->name('createCategory');
+Route::put('/update Category/{id}',[TowobolaluxeController::class,'updateCategory'])->name('updateCategory');
 
 

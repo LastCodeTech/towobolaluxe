@@ -60,15 +60,7 @@
 <main class="flex flex-col">
 <h1 class="font-display text-[40px] font-bold leading-tight tracking-tight px-4 text-center pt-8 pb-6 text-text-light dark:text-text-dark">My Favorites</h1>
 <div class="flex gap-3 px-4 pb-6 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5">
-<p class="text-sm font-medium leading-normal text-white">All</p>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Outfits</p>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Videos</p>
-</button>
+
 <h1 class='flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20'><a href="{{route('lookBook')}}" class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">back to lookBook</a></h1>
 </div>
 <div class="grid grid-cols-2 gap-3 p-4">

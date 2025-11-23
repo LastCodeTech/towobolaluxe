@@ -64,27 +64,12 @@
 <h1 class="font-display text-[40px] font-bold leading-tight tracking-tight px-4 text-center pt-8 pb-4 text-text-light dark:text-text-dark">Lookbook</h1>
 <div class="px-4 pb-6 flex items-center justify-between">
 <p class="text-sm text-text-light/70 dark:text-text-dark/70">124 Looks</p>
-<button class="flex items-center gap-1.5 rounded-full px-4 py-2 ring-1 ring-inset ring-text-light/20 dark:ring-text-dark/20">
-<span class="material-symbols-outlined text-base">filter_list</span>
-<span class="text-sm font-medium">Filter</span>
-</button>
+<select class="bg-slate-700 text-white rounded-xl">
+<option value="">choose category</option>
+<option value="1">All</option>
+</select>
 </div>
 <div class="flex gap-3 px-4 pb-6 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5">
-<p class="text-sm font-medium leading-normal text-white">All</p>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Abayas</p>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Gowns</p>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Kaftans</p>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Bridal</p>
-</button>
 <button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
 <p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark"><a href='{{route('lookBookFav')}}'>view favorites</a></p>
 </button>

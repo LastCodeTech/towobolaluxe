@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\Auth as SupportFacadesAuth;
 
 class TowobolaluxeController extends Controller
 {
@@ -46,7 +50,8 @@ class TowobolaluxeController extends Controller
         }
     }
     public function dashboard(){
-        return view('dashboard');
+        $category_id=category::all();
+        return view('dashboard',compact('category_id'));
     }
 
     public function testimonialsmng(){
@@ -67,7 +72,41 @@ class TowobolaluxeController extends Controller
      }
 
      public function addcategory(){
-        return view('addcategory');
+        $categories=category::all();
+        return view('addcategory',compact('categories'));
      }
+     public function editcategory($id)
+{
+    $category = Category::findOrFail($id);
+
+    return view('editcategory', compact('category'));
+}
+
+
+     public function updateCategory(Request $request, $id)
+{
+    $validate = $request->validate([
+        'name' => 'required|string|unique:categories,name,' . $id
+    ]);
+
+    $category = Category::findOrFail($id);
+    $category->update($validate);
+
+    return redirect()->route('addcategory')->with('message', 'Category updated!');
+}
+
+
+     public function createCategory(Request $request){
+        $validate=$request->validate([
+          'name' => 'required|string|unique:categories,name'
+        ]);
+        $yes=category::create($validate);
+        if($yes){
+            return redirect()->route('dashboard')->with('message','category added successfully!!!');
+        }
+         return redirect()->route('addcategory')->with('message','an error occurred !!!');
+     }
+
+    
    
 }

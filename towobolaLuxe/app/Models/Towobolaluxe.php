@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Towobolaluxe extends Model
 {
-    //
+    protected $fillable = [
+        'collectionName',
+        'description',
+        'category_id'
+    ];
+
+    public function category(){
+        return $this->hasMany(category::class);
+    }
+ 
 }

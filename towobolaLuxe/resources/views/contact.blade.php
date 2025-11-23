@@ -58,7 +58,7 @@
                             </h2>
 </div>
 <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-text-light text-sm font-bold leading-normal tracking-wide @[480px]:text-base hover:opacity-90 transition-opacity">
-<span class="truncate">Book a Fitting</span>
+<span class="truncate"><a href="{{route('bookfittings')}}">Book a Fitting</a></span>
 </button>
 </div>
 </div>
