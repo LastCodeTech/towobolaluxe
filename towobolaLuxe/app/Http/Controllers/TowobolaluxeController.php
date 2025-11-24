@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\Towobolaluxe;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,8 +51,10 @@ class TowobolaluxeController extends Controller
         }
     }
     public function dashboard(){
-        $category_id=category::all();
-        return view('dashboard',compact('category_id'));
+        $categories=category::all();
+
+        // dd($categories);
+        return view('dashboard',compact('categories'));
     }
 
     public function testimonialsmng(){
@@ -109,7 +112,13 @@ class TowobolaluxeController extends Controller
         }
          return redirect()->route('addcategory')->with('message','an error occurred !!!');
      }
+     
+     public function deleteCategory($id){
 
+       $yes = category::findOrFail($id);
+       $yes->delete();
+       return redirect()->route('addcategory');
+     }
     
    
 }

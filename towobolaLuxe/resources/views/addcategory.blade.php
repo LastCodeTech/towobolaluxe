@@ -31,9 +31,13 @@
         <button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-neutral-light dark:hover:bg-gray-700">
         <span class="material-symbols-outlined text-lg"><a href='{{route('editcategory',$category->id)}}'>edit</a></span>
         </button>
-        <button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-red-50 dark:hover:bg-red-900/30">
-        <span class="material-symbols-outlined text-lg text-red-600 dark:text-red-500">delete</span>
+        <form action="{{route('deleteCategory',$category->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="flex h-9 w-9 items-center justify-center rounded-md border border-border-light dark:border-border-dark hover:bg-red-50 dark:hover:bg-red-900/30">
+         <input type="submit" value='delete' class="material-symbols-outlined text-lg text-red-600 dark:text-red-500">
         </button>
+        </form>
         </div>
         </div>
             @endforeach

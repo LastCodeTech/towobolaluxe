@@ -106,12 +106,12 @@
 <label class="block text-sm font-medium text-text-light/80 dark:text-text-dark/80" for="collection-categories">Categories</label>
 <select class='text-white bg-slate-700 text-sm capitalize font-bold border-1 rounded-md'>
     <option value="">choose Category</option>
-    <option value="">abaya</option>
+    {{-- <option value="">abaya</option>
     <option value="">gown</option>
-    <option value="">hijab</option>
-    {{-- @foreach($category as $category)
-    <option value="{{$categor->id}}">{{$categor->name}}</option>
-    @endforeach --}}
+    <option value="">hijab</option> --}}
+    @foreach($categories as $category)
+    <option value="{{$category->id}}">{{$category->name}}</option>
+    @endforeach
 </select></div>
 <button class='text-2xl font-bold text-white bg-red-400 py-2 px-3 rounded-md'><a href='{{route('addcategory')}}'>+</a></button>
 </div>

@@ -19,10 +19,21 @@ Route::get('/edit collection',[TowobolaluxeController::class,'editcollection'])-
 Route::get('/edit testimonials',[TowobolaluxeController::class,'edittestimonials'])->name('edittestimonials');
 Route::post('/logout',[TowobolaluxeController::class,'logout'])->name('logout');
 Route::get('/testimonials management',[TowobolaluxeController::class,'testimonialsmng'])->name('testimonialsmng');
-Route::get('/addcategory',[TowobolaluxeController::class,'addcategory'])->name('addcategory');
-Route::get('/editcategory/{id}',[TowobolaluxeController::class,'editcategory'])->name('editcategory');
+
+
+
+
+
+Route::middleware('auth')->prefix('dashboard')->group(function(){
+    Route::get('/addcategory',[TowobolaluxeController::class,'addcategory'])->name('addcategory');
+    Route::get('/editcategory/{id}',[TowobolaluxeController::class,'editcategory'])->name('editcategory');
+    Route::post('/createCategory',[TowobolaluxeController::class,'createCategory'])->name('createCategory');
+
+});
+
+
 Route::post('/login',[TowobolaluxeController::class,'loginProcess'])->name('loginProcess');
-Route::post('/createCategory',[TowobolaluxeController::class,'createCategory'])->name('createCategory');
-Route::put('/update Category/{id}',[TowobolaluxeController::class,'updateCategory'])->name('updateCategory');
+Route::put('/updateCategory/{id}',[TowobolaluxeController::class,'updateCategory'])->name('updateCategory');
+Route::delete('/deletecategory/{id}',[TowobolaluxeController::class,'deleteCategory'])->name('deleteCategory');
 
 
