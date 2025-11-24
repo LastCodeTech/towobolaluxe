@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Lookbook;
+use App\Models\Testimonial;
 use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -13,6 +14,7 @@ class DashboardStats extends StatsOverviewWidget
     {
         $lookbook_total = Lookbook::count();
         $total_users = User::count();
+        $total_testimonials=Testimonial::count();
         return [
             Stat::make("Total Users", $total_users)
                 ->color('primary')
@@ -24,7 +26,7 @@ class DashboardStats extends StatsOverviewWidget
                 ->description('The total number of our collections')
                 ->icon('heroicon-m-shopping-bag')
             ,
-            Stat::make("Testimonials", 20)
+            Stat::make("Testimonials", $total_testimonials)
                 ->color('primary')
                 ->description('Testimonials from our customers')
                 ->icon('heroicon-m-chat-bubble-bottom-center')
