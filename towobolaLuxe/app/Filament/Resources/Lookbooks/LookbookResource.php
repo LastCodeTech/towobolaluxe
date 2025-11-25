@@ -19,7 +19,7 @@ use Filament\Tables\Table;
 class LookbookResource extends Resource
 {
     protected static ?string $model = Lookbook::class;
-    protected static ?string $navigationLabel = "Collections";
+    protected static ?string $navigationLabel = "Lookbook";
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema

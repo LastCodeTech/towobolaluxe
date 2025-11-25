@@ -63,78 +63,29 @@
 <main class="flex flex-col">
 <h1 class="font-display text-[40px] font-bold leading-tight tracking-tight px-4 text-center pt-8 pb-4 text-text-light dark:text-text-dark">Lookbook</h1>
 <div class="px-4 pb-6 flex items-center justify-between">
-<p class="text-sm text-text-light/70 dark:text-text-dark/70">124 Looks</p>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70">{{$lookBooks->count()}}Looks</p>
 <select class="bg-slate-700 text-white rounded-xl">
 <option value="">choose category</option>
 <option value="1">All</option>
+@foreach($categories as $category)
+<option value="{{$category->id}}</">{{$category->name}}</option>
+@endforeach
 </select>
 </div>
-<div class="flex gap-3 px-4 pb-6 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light px-5 ring-1 ring-inset ring-text-light/20 dark:bg-background-dark dark:ring-text-dark/20">
-<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark"><a href='{{route('lookBookFav')}}'>view favorites</a></p>
-</button>
-</div>
+
 <div class="grid grid-cols-2 gap-3 p-4">
-<div class="col-span-1 flex flex-col gap-3">
+{{-- <div class="col-span-1 flex flex-col gap-3"> --}}
+@foreach($lookBooks as $lookBook)
 <div class="relative group overflow-hidden rounded-xl">
-<img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" data-alt="Model in a flowing white dress against a neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXpydiLHvRKiCz_EF5P3pYBFHmxYX53pjgO6iobvVwueVJWVJN31xiEdU5Vvv0K8YbMDAo6wmte3yHaqmarVjWFCAtVfRCDbEdeiHB-FNves6yH7R64W9rk4ci_K27nOrU8vMA9dIEc6l74yTUbiOinlGsP6Zy-LH0ahaeBDfwy6preTszs73pty97Mw4qHtd4dK43X75D-RgcmmngBV1rl6_Y8lOxkl2zzyynJbFMmlZt_exwtyUTJviVArWAm6KJ59MbJ4kWO4Zk"/>
+<img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" data-alt="Model in a flowing white dress against a neutral background." src="{{Storage::disk('public')->url($lookBook->image)}}"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<button class="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-colors hover:bg-white/30">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<p class="absolute bottom-4 left-4 font-display text-lg font-bold leading-tight text-white">The Bloom Collection</p>
+<p class="absolute bottom-4 left-4 font-display text-lg font-bold leading-tight text-white">{{$lookBook->collection_name}}</p>
 </div>
-<div class="relative group overflow-hidden rounded-xl">
-<video class="h-full w-full object-cover aspect-[3/4]" loop="" muted="" playsinline="" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuCv3cSLGZlxbhq-nR-sJtVyEKZwvvmd_-YPG9EuSdp4YncT4MxgV9dq_2pOAoAoq7A3F5x-yqq_N9tSHUxmgfXaPWfnWbJan8_ODo-KJ-itX6uczDO0cRaBW8ivEAat1tR53Zznu-iP9uXyJc1xCk5fgvBZtaN2Xhk2lsXfkMO5RG94CjWa5JynjWwsrp-zCqpbgJlku2VZPYPAQ26KI0bsF9GmClSEkWFryHv41_P2T663AgV40rcLae_15Eww4PvBxgPEGnxqPJ24">
-<source src="#" type="video/mp4"/>
-</video>
-<a class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-center" href="#fullscreen-video-overlay">
-<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110">
-<span class="material-symbols-outlined text-3xl">play_arrow</span>
-</div>
-</a>
-<button class="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-colors hover:bg-white/30">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<p class="absolute bottom-4 left-4 font-display text-lg font-bold leading-tight text-white">Midnight Velvet</p>
-</div>
-</div>
-<div class="col-span-1 flex flex-col gap-3 mt-8">
-<div class="relative group overflow-hidden rounded-xl">
-<img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" data-alt="Close-up of a model wearing a detailed, embellished dress." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8JB3xlzhAhgCU8xBbFe6i0aj1TF0iwq67dUF6jfP8simhsYTJTK2HY7hB1JhhiK-BF1rZBrOgpie1jzDQLaGCkM_up91ycQmoQLqG9ayxbbKFQVV3VpIv4AKzakwp0QTwnGdgp0hCDnOG23YhpUW5AEgLp7mHYZdyImHwT6U-bsyuSQGIN1KBdR3bqsFcM_mmBcz6tsCgZZGsJru5ZxDpuHdcwd0wxIsLMWt55RFaVvYuu6_4XUoV9pwZ_3QfJtKSDa9B6wve0HAF"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<button class="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-colors hover:bg-white/30">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<p class="absolute bottom-4 left-4 font-display text-lg font-bold leading-tight text-white">Ethereal Bridal</p>
-</div>
-<div class="relative group overflow-hidden rounded-xl">
-<img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" data-alt="Full shot of a model in a vibrant, patterned outfit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUrm3WswrrVKQNM_tPMwDmmasuVQ2h_0N186CbJkGQyGsqM9CMSrwA7ydZVtDE2oT96qyGkp1aVMiIUxedbvptPzQRV8YgLTaIQ1uVI_smeeHlc-FBOMv0TjzEKBd2MME0s3fbKawePgal4veHqygCPqzIw3dte-ZVjzFw5UhYtd2t9a9oFnkeVfuUr3ETm2xu42kkZus9OqAttWprEYlQghmnVRRJEdaxdhX54bha2M07xF_C_QPp8v3Gna1bml72bmXxwA66fVAZ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<button class="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-colors hover:bg-white/30">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<p class="absolute bottom-4 left-4 font-display text-lg font-bold leading-tight text-white">The Bloom Collection</p>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-3 px-4">
-<div class="relative group overflow-hidden rounded-xl">
-<video class="h-full w-full object-cover aspect-[4/3]" loop="" muted="" playsinline="" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuB4lYuFpxzGggCOp16vsUv4DkWh5kl0Y9sXWSTv91Qrnf46Vx5fFWGDadGOjTSuTQWmW4hccX_ddm50es27PTJfJojT5p1jNjf4-1f5yYxy5KRoiOeRZ9jTq5b7DOLOhkRWPzlQbF3oqhm6BB-Niqimf5ljyL9Qa7HFjGssFTDG14hP1kEhemB3aIAcJsPx_BOva6605W_M60HJcKwRrh2zSed5crCDoSFvlCdFpOrc-h_22HEKZSKwML4Ghcq9hMy4IwygzsNH-FDW">
-<source src="#" type="video/mp4"/>
-</video>
-<a class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-center" href="#fullscreen-video-overlay">
-<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110">
-<span class="material-symbols-outlined text-4xl">play_arrow</span>
-</div>
-</a>
-<button class="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-colors hover:bg-white/30">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<p class="absolute bottom-4 left-4 font-display text-lg font-bold leading-tight text-white">Evening Wear</p>
-</div>
+@endforeach
+
 </div>
 </main>
+
 <div class="fixed bottom-6 right-6 z-40">
 <button class="flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#25D366] text-white shadow-lg">
 <svg class="bi bi-whatsapp" fill="currentColor" height="28" viewBox="0 0 16 16" width="28" xmlns="http://www.w3.org/2000/svg">

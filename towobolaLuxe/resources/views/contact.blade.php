@@ -105,18 +105,19 @@
 <!-- Section Header -->
 <h2 class="text-2xl font-serif font-bold leading-tight tracking-wide text-text-light dark:text-text-dark pb-4 border-b border-border-light dark:border-border-dark">Send a Message</h2>
 <!-- Contact Form -->
-<form class="space-y-6 mt-6">
+<form class="space-y-6 mt-6" method="POST" action="{{route('ContactProcess')}}">
+  @csrf
 <div>
 <label class="block text-sm font-medium mb-2" for="name">Name</label>
-<input class="block w-full rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary dark:text-text-dark transition-colors" id="name" name="name" placeholder="Your Name" type="text"/>
+<input  class="block w-full rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary dark:text-text-dark transition-colors" id="name" name="name" placeholder="Your Name" type="text"/>
 </div>
 <div>
 <label class="block text-sm font-medium mb-2" for="email">Email</label>
-<input class="block w-full rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary dark:text-text-dark transition-colors" id="email" name="email" placeholder="your@email.com" type="email"/>
+<input  class="block w-full rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary dark:text-text-dark transition-colors" id="email" name="email" placeholder="your@email.com" type="email"/>
 </div>
 <div>
 <label class="block text-sm font-medium mb-2" for="message">Message</label>
-<textarea class="block w-full rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary dark:text-text-dark transition-colors" id="message" name="message" placeholder="How can we help you?" rows="5"></textarea>
+<textarea  class="block w-full rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary dark:text-text-dark transition-colors" id="message" name="message" placeholder="How can we help you?" rows="5"></textarea>
 </div>
 <div>
 <button class="w-full flex items-center justify-center rounded-lg h-12 px-5 bg-primary text-text-light text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity" type="submit">

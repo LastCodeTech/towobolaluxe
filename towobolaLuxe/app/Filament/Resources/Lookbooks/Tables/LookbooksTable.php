@@ -21,7 +21,8 @@ class LookbooksTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('category.name'),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                 ->disk('public'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

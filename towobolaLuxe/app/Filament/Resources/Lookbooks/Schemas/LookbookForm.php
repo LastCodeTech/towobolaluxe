@@ -33,7 +33,8 @@ class LookbookForm
 
                         FileUpload::make('image')
                             ->image()
-                            ->columnSpan('full'),
+                            ->columnSpan('full')
+                            ->disk('public'),
                     ])->columns(2)
             ])->columns(1);
     }

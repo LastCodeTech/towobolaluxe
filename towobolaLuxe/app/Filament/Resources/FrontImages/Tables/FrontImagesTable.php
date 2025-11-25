@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Testimonials\Tables;
+namespace App\Filament\Resources\FrontImages\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -10,18 +10,15 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class TestimonialsTable
+class FrontImagesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('testimonial')
-                ->searchable(),
                 ImageColumn::make('image')
                 ->disk('public'),
+               
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

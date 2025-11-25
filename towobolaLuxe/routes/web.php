@@ -33,6 +33,7 @@ Route::middleware('auth')->prefix('dashboard')->group(function(){
 
 
 Route::post('/login',[TowobolaluxeController::class,'loginProcess'])->name('loginProcess');
+Route::post('/Contact Process',[TowobolaluxeController::class,'ContactProcess'])->name('ContactProcess');
 Route::put('/updateCategory/{id}',[TowobolaluxeController::class,'updateCategory'])->name('updateCategory');
 Route::delete('/deletecategory/{id}',[TowobolaluxeController::class,'deleteCategory'])->name('deleteCategory');
 

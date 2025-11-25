@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\Contact;
+use App\Models\FrontImage;
+use App\Models\Lookbook;
 use App\Models\Towobolaluxe;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,7 +16,8 @@ use Illuminate\Support\Facades\Auth as SupportFacadesAuth;
 class TowobolaluxeController extends Controller
 {
     public function home(){
-        return view('home');
+        $frontImages = FrontImage::select('image')->take(6)->get();
+        return view('home',compact('frontImages'));
     }
     public function testimonials(){
         return view('testimonials');
@@ -21,11 +25,11 @@ class TowobolaluxeController extends Controller
     public function bookfittings(){
         return view('bookfittings');
     }
-    public function lookBookFav(){
-        return view('lookBookFav');
-    }
+ 
     public function lookBook(){
-        return view('lookBook');
+        $lookBooks=Lookbook::all();
+        $categories=category::all();
+        return view('lookBook',compact('lookBooks','categories'));
     }
     public function about(){
         return view('about');
@@ -118,6 +122,20 @@ class TowobolaluxeController extends Controller
        $yes = category::findOrFail($id);
        $yes->delete();
        return redirect()->route('addcategory');
+     }
+
+     //contact 
+     public function ContactProcess(Request $request){
+        $validate=$request->validate([
+            'name'=>'string|required|min:5',
+            'email'=>'email|required',
+            'message'=>'string|required|min:20'
+        ]);
+        
+        $contact=Contact::create($validate);
+        if($contact){
+            return redirect()->route('home');
+        }
      }
     
    

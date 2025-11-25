@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Testimonials\Schemas;
+namespace App\Filament\Resources\Contacts\Schemas;
 
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
-class TestimonialForm
+class ContactForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -15,13 +14,13 @@ class TestimonialForm
             ->components([
                 TextInput::make('name')
                     ->required(),
-                Textarea::make('testimonial')
+                TextInput::make('email')
+                    ->label('Email address')
+                    ->email()
+                    ->required(),
+                Textarea::make('message')
                     ->required()
                     ->columnSpanFull(),
-                FileUpload::make('image')
-                    ->image()
-                    ->disk('public')
-                    ->required(),
             ]);
     }
 }

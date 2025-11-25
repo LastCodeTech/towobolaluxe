@@ -15,7 +15,8 @@ class LookbookInfolist
                 TextEntry::make('collection_name'),
                 TextEntry::make('category_id')
                     ->numeric(),
-                ImageEntry::make('image'),
+                ImageEntry::make('image')
+                 ->disk('public'),
                 TextEntry::make('created_at')
                     ->dateTime(),
                 TextEntry::make('updated_at')

@@ -1,27 +1,30 @@
 <?php
 
-namespace App\Filament\Resources\Testimonials\Schemas;
+namespace App\Filament\Resources\FrontImages\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Auth;
 
-class TestimonialForm
+class FrontImageForm
 {
+    public static function getCreateAuthorizationResponse()
+    {
+        return false;
+    }
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                Textarea::make('testimonial')
-                    ->required()
-                    ->columnSpanFull(),
                 FileUpload::make('image')
                     ->image()
                     ->disk('public')
                     ->required(),
-            ]);
+                Hidden::make('user_id')
+                    ->default(Auth::id())
+
+            ])->columns(1);
     }
 }
