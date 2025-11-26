@@ -26,8 +26,12 @@ class TowobolaluxeController extends Controller
         return view('bookfittings');
     }
  
-    public function lookBook(){
-        $lookBooks=Lookbook::all();
+    public function lookBook(Request $request){
+        $query = Lookbook::where('status', true);
+        if($request->has('category') && $request->category != 'all'){
+            $query->where('category_id', $request->category);
+        }
+        $lookBooks = $query->get();
         $categories=category::all();
         return view('lookBook',compact('lookBooks','categories'));
     }

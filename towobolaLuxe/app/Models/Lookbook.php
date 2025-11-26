@@ -10,7 +10,8 @@ class Lookbook extends Model
         'collection_name',
         'description',
         'category_id',
-        'image'
+        'image',
+        'video'
     ];
 
 

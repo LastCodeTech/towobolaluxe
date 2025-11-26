@@ -15,11 +15,14 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class LookbookResource extends Resource
 {
     protected static ?string $model = Lookbook::class;
     protected static ?string $navigationLabel = "Lookbook";
+    protected static string|UnitEnum|null $navigationGroup = "Business";
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema

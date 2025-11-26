@@ -35,6 +35,9 @@ class LookbookForm
                             ->image()
                             ->columnSpan('full')
                             ->disk('public'),
+                        FileUpload::make('video')
+                        ->columnSpan('full')
+                        ->disk('public'),
                     ])->columns(2)
             ])->columns(1);
     }

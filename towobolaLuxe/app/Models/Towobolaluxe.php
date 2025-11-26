@@ -9,7 +9,12 @@ class Towobolaluxe extends Model
     protected $fillable = [
         'collectionName',
         'description',
-        'category_id'
+        'category_id',
+        'status'
+    ];
+
+    protected $casts = [
+        'status' => 'boolean'
     ];
 
     public function category(){

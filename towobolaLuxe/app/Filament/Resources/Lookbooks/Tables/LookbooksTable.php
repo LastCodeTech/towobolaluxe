@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class LookbooksTable
@@ -16,6 +17,7 @@ class LookbooksTable
     {
         return $table
             ->columns([
+                
                 TextColumn::make('collection_name')
                     ->toggleable()
                     ->sortable()
@@ -23,6 +25,9 @@ class LookbooksTable
                 TextColumn::make('category.name'),
                 ImageColumn::make('image')
                  ->disk('public'),
+                 TextColumn::make('video')
+                 ,
+                 ToggleColumn::make('status'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

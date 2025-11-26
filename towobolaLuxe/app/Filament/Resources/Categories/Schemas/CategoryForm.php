@@ -15,6 +15,7 @@ class CategoryForm
                 Section::make('Category Info')
                     ->schema([
                         TextInput::make('name')
+                        ->unique()
                     ->required(),
                     ])->columns(1)
                     ])->columns(1);
