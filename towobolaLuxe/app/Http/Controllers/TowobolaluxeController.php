@@ -23,7 +23,8 @@ class TowobolaluxeController extends Controller
         return view('testimonials');
     }
     public function bookfittings(){
-        return view('bookfittings');
+        $categories=category::all();
+        return view('bookfittings',compact('categories'));
     }
  
     public function lookBook(Request $request){
