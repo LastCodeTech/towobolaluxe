@@ -10,4 +10,5 @@ class Fittingcategory extends Model
         'name',
        
     ];
+
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use App\Models\Contact;
+use App\Models\Fittingcategory;
+use App\Models\FittingForm;
 use App\Models\FrontImage;
 use App\Models\Lookbook;
 use App\Models\Towobolaluxe;
@@ -22,9 +24,15 @@ class TowobolaluxeController extends Controller
     public function testimonials(){
         return view('testimonials');
     }
-    public function bookfittings(){
-        $categories=category::all();
-        return view('bookfittings',compact('categories'));
+    public function bookfittings(Request $request){
+        $forms = [];
+        if($request->has('fitting_category')){
+            $forms = FittingForm::where('fittingcategory_id', $request->fitting_category)->get();
+
+        }
+
+        $categories=Fittingcategory::all();
+        return view('bookfittings',compact('categories', 'forms'));
     }
  
     public function lookBook(Request $request){
