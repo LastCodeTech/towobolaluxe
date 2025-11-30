@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\FittingForms\Tables;
 
+use App\Models\Fittingcategory;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -16,6 +17,7 @@ class FittingFormsTable
         return $table
             ->columns([
                 TextColumn::make('fittingcategory_id')
+                ->searchable()
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('user_id')

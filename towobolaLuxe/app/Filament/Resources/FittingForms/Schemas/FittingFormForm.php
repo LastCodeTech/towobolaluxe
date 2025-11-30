@@ -24,7 +24,7 @@ class FittingFormForm
                             ->required()
                             ->columnSpanFull()
                             ->label('Fitting Categories')
-                            ->options(Fittingcategory::all()->pluck('name', 'id')),
+                            ->options(Fittingcategory::all()->pluck('name','id')),
                         Repeater::make('values')
                             ->schema([
                                 Section::make()->schema([
